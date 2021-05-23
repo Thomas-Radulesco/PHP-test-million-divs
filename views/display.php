@@ -29,10 +29,14 @@ function drawRectangle(int $height, int $width): void
     while ($y <= $height) {
         echo ('<div class="grid-row">');
 
-        for ($x = 1; $x <= $width; $x++) {
+        $x = 1;
+        while ($x <= $width) {
 
             echo ('<div class="pixel"></div>');
+            $x++;
+
         };
+
         $y++;
 
         echo ('</div>');
@@ -64,253 +68,257 @@ function drawRectangle(int $height, int $width): void
             </a>
         </div>
 
-        <!-- START : digit left : tens  -->
-        <div class="digit-tens d-flex flex-wrap">
+        <!-- START : number  -->
+        <div class="number d-flex justify-content-between">
 
-            <!-- START : first horizontal line = horizontal line top  -->
-            <div class="digit-tens horizontal top 
-            <?=
-            (($first == 0) || ($first == 1) || ($first == 4)) ? ' off' : '';
-            ?>">
-                <?php
-                drawRectangle(100, 500);
-                ?>
-            </div>
-            <!-- END : first horizontal line = horizontal line top  -->
+            <!-- START : digit left : tens  -->
+            <div class="digit-tens d-flex flex-wrap">
 
-            <!-- START : mid row container  -->
-            <div class="digit-tens mid-row d-flex flex-row flex-wrap">
-
-                <!-- START : mid row container : first container vertical left -->
-                <div class="digit-tens mid-row vertical-left d-flex flex-column">
-
-                    <!-- START : first vertical line = vertical line left-top  -->
-                    <div class="digit-tens vertical left-top 
-                        <?=
-                        (($first == 0) || ($first == 1) || ($first == 2) || ($first == 3) || ($first == 7)) ? ' off' : '';
-                        ?>">
-                        <?php
-                        drawRectangle(400, 100);
-                        ?>
-                    </div>
-                    <!-- END : first vertical line = vertical line left-top  -->
-
-                    <!-- START : second vertical line = vertical line left-bottom  -->
-                    <div class="digit-tens vertical left-bottom 
-                        <?=
-                        (($first == 0) || ($first == 1) || ($first == 3) || ($first == 4) || ($first == 5) || ($first == 7) || ($first == 9)) ? ' off' : '';
-                        ?>">
-                        <?php
-                        drawRectangle(400, 100);
-                        ?>
-                    </div>
-                    <!-- END : second vertical line = vertical line left-bottom  -->
-
-                </div>
-                <!-- END : mid row container : first container vertical left -->
-
-                <!-- START : mid row container : second container vertical mid -->
-                <div class="digit-tens mid-row middle d-flex flex-column flex-wrap">
-
-                    <!-- START : mid row container : second container vertical mid : always blank top square -->
-                    <div class="digit-tens horizontal mid top-square off">
-                        <?php
-                        drawRectangle(350, 300);
-                        ?>
-                    </div>
-                    <!-- END : mid row container : second container vertical mid : always blank top square -->
-
-                    <!-- START : second horizontal line = horizontal line mid  -->
-                    <div class="digit-tens horizontal mid 
-                        <?=
-                        (($first == 0) || ($first == 1) || ($first == 7)) ? ' off' : '';
-                        ?>">
-                        <?php
-                        drawRectangle(100, 300);
-                        ?>
-                    </div>
-                    <!-- END : second horizontal line = horizontal line mid  -->
-
-                    <!-- START : mid row container : second container vertical mid : always blank bottom square -->
-                    <div class="digit-tens horizontal mid bottom-square off">
-                        <?php
-                        drawRectangle(350, 300);
-                        ?>
-                    </div>
-                    <!-- END : mid row container : second container vertical mid : always blank top square -->
-
-                </div>
-                <!-- END : mid row container : second container vertical mid -->
-
-                <!-- START : mid row container : last container vertical right -->
-                <div class="digit-tens mid-row vertical-right d-flex flex-column">
-
-                    <!-- START : first vertical line = vertical line right-top  -->
-                    <div class="digit-tens vertical right-top 
-                        <?=
-                        (($first == 0) || ($first == 5) || ($first == 6)) ? ' off' : '';
-                        ?>">
-                        <?php
-                        drawRectangle(400, 100);
-                        ?>
-                    </div>
-                    <!-- END : first vertical line = vertical line right-top  -->
-
-                    <!-- START : second vertical line = vertical line right-bottom  -->
-                    <div class="digit-tens vertical right-bottom 
-                        <?=
-                        (($first == 0) || ($first == 2)) ? ' off' : '';
-                        ?>">
-                        <?php
-                        drawRectangle(400, 100);
-                        ?>
-                    </div>
-                    <!-- END : second vertical line = vertical line right-bottom  -->
-
-                </div>
-                <!-- END : mid row container : last container vertical right -->
-
-            </div>
-            <!-- END : mid row container  -->
-
-            <!-- START : last horizontal line = horizontal line bottom  -->
-            <div class="digit-tens horizontal bottom 
+                <!-- START : first horizontal line = horizontal line top  -->
+                <div class="digit-tens horizontal top 
                 <?=
-                (($first == 0) || ($first == 1) || ($first == 4) || ($first == 7)) ? ' off' : '';
+                (($first == 0) || ($first == 1) || ($first == 4)) ? ' off' : '';
                 ?>">
-                <?php
-                drawRectangle(100, 500);
-                ?>
+                    <?php
+                    drawRectangle(100, 500);
+                    ?>
+                </div>
+                <!-- END : first horizontal line = horizontal line top  -->
+
+                <!-- START : mid row container  -->
+                <div class="digit-tens mid-row d-flex flex-row flex-wrap">
+
+                    <!-- START : mid row container : first container vertical left -->
+                    <div class="digit-tens mid-row vertical-left d-flex flex-column">
+
+                        <!-- START : first vertical line = vertical line left-top  -->
+                        <div class="digit-tens vertical left-top 
+                            <?=
+                            (($first == 0) || ($first == 1) || ($first == 2) || ($first == 3) || ($first == 7)) ? ' off' : '';
+                            ?>">
+                            <?php
+                            drawRectangle(400, 100);
+                            ?>
+                        </div>
+                        <!-- END : first vertical line = vertical line left-top  -->
+
+                        <!-- START : second vertical line = vertical line left-bottom  -->
+                        <div class="digit-tens vertical left-bottom 
+                            <?=
+                            (($first == 0) || ($first == 1) || ($first == 3) || ($first == 4) || ($first == 5) || ($first == 7) || ($first == 9)) ? ' off' : '';
+                            ?>">
+                            <?php
+                            drawRectangle(400, 100);
+                            ?>
+                        </div>
+                        <!-- END : second vertical line = vertical line left-bottom  -->
+
+                    </div>
+                    <!-- END : mid row container : first container vertical left -->
+
+                    <!-- START : mid row container : second container vertical mid -->
+                    <div class="digit-tens mid-row middle d-flex flex-column flex-wrap">
+
+                        <!-- START : mid row container : second container vertical mid : always blank top square -->
+                        <div class="digit-tens horizontal mid top-square off">
+                            <?php
+                            drawRectangle(350, 300);
+                            ?>
+                        </div>
+                        <!-- END : mid row container : second container vertical mid : always blank top square -->
+
+                        <!-- START : second horizontal line = horizontal line mid  -->
+                        <div class="digit-tens horizontal mid 
+                            <?=
+                            (($first == 0) || ($first == 1) || ($first == 7)) ? ' off' : '';
+                            ?>">
+                            <?php
+                            drawRectangle(100, 300);
+                            ?>
+                        </div>
+                        <!-- END : second horizontal line = horizontal line mid  -->
+
+                        <!-- START : mid row container : second container vertical mid : always blank bottom square -->
+                        <div class="digit-tens horizontal mid bottom-square off">
+                            <?php
+                            drawRectangle(350, 300);
+                            ?>
+                        </div>
+                        <!-- END : mid row container : second container vertical mid : always blank top square -->
+
+                    </div>
+                    <!-- END : mid row container : second container vertical mid -->
+
+                    <!-- START : mid row container : last container vertical right -->
+                    <div class="digit-tens mid-row vertical-right d-flex flex-column">
+
+                        <!-- START : first vertical line = vertical line right-top  -->
+                        <div class="digit-tens vertical right-top 
+                            <?=
+                            (($first == 0) || ($first == 5) || ($first == 6)) ? ' off' : '';
+                            ?>">
+                            <?php
+                            drawRectangle(400, 100);
+                            ?>
+                        </div>
+                        <!-- END : first vertical line = vertical line right-top  -->
+
+                        <!-- START : second vertical line = vertical line right-bottom  -->
+                        <div class="digit-tens vertical right-bottom 
+                            <?=
+                            (($first == 0) || ($first == 2)) ? ' off' : '';
+                            ?>">
+                            <?php
+                            drawRectangle(400, 100);
+                            ?>
+                        </div>
+                        <!-- END : second vertical line = vertical line right-bottom  -->
+
+                    </div>
+                    <!-- END : mid row container : last container vertical right -->
+
+                </div>
+                <!-- END : mid row container  -->
+
+                <!-- START : last horizontal line = horizontal line bottom  -->
+                <div class="digit-tens horizontal bottom 
+                    <?=
+                    (($first == 0) || ($first == 1) || ($first == 4) || ($first == 7)) ? ' off' : '';
+                    ?>">
+                    <?php
+                    drawRectangle(100, 500);
+                    ?>
+                </div>
+                <!-- END : last horizontal line = horizontal line bottom  -->
+
             </div>
-            <!-- END : last horizontal line = horizontal line bottom  -->
+            <!-- END : digit left : tens  -->
+
+
+            <!-- START : digit right : units  -->
+            <div class="digit-units d-flex flex-wrap">
+                <!-- START : first horizontal line = horizontal line top  -->
+                <div class="digit-units horizontal top 
+                <?=
+                (($second == 1) || ($second == 4)) ? ' off' : '';
+                ?>">
+                    <?php
+                    drawRectangle(100, 500);
+                    ?>
+                </div>
+                <!-- END : first horizontal line = horizontal line top  -->
+
+                <!-- START : mid row container  -->
+                <div class="digit-units mid-row d-flex flex-row flex-wrap">
+
+                    <!-- START : mid row container : first container vertical left -->
+                    <div class="digit-units mid-row vertical-left d-flex flex-column">
+
+                        <!-- START : first vertical line = vertical line left-top  -->
+                        <div class="digit-units vertical left-top 
+                            <?=
+                            (($second == 1) || ($second == 2) || ($second == 3) || ($second == 7)) ? ' off' : '';
+                            ?>">
+                            <?php
+                            drawRectangle(400, 100);
+                            ?>
+                        </div>
+                        <!-- END : first vertical line = vertical line left-top  -->
+
+                        <!-- START : second vertical line = vertical line left-bottom  -->
+                        <div class="digit-units vertical left-bottom 
+                            <?=
+                            (($second == 1) || ($second == 3) || ($second == 4) || ($second == 5) || ($second == 7) || ($second == 9)) ? ' off' : '';
+                            ?>">
+                            <?php
+                            drawRectangle(400, 100);
+                            ?>
+                        </div>
+                        <!-- END : second vertical line = vertical line left-bottom  -->
+
+                    </div>
+                    <!-- END : mid row container : first container vertical left -->
+
+                    <!-- START : mid row container : second container vertical mid -->
+                    <div class="digit-units mid-row middle d-flex flex-column flex-wrap">
+
+                        <!-- START : mid row container : second container vertical mid : always blank top square -->
+                        <div class="digit-units horizontal mid top-square off">
+                            <?php
+                            drawRectangle(350, 300);
+                            ?>
+                        </div>
+                        <!-- END : mid row container : second container vertical mid : always blank top square -->
+
+                        <!-- START : second horizontal line = horizontal line mid  -->
+                        <div class="digit-units horizontal mid 
+                            <?=
+                            (($second == 0) || ($second == 1) || ($second == 7)) ? ' off' : '';
+                            ?>">
+                            <?php
+                            drawRectangle(100, 300);
+                            ?>
+                        </div>
+                        <!-- END : second horizontal line = horizontal line mid  -->
+
+                        <!-- START : mid row container : second container vertical mid : always blank bottom square -->
+                        <div class="digit-units horizontal mid bottom-square off">
+                            <?php
+                            drawRectangle(350, 300);
+                            ?>
+                        </div>
+                        <!-- END : mid row container : second container vertical mid : always blank top square -->
+
+                    </div>
+                    <!-- END : mid row container : second container vertical mid -->
+
+                    <!-- START : mid row container : last container vertical right -->
+                    <div class="digit-units mid-row vertical-right d-flex flex-column">
+
+                        <!-- START : first vertical line = vertical line right-top  -->
+                        <div class="digit-units vertical right-top 
+                            <?=
+                            (($second == 5) || ($second == 6)) ? ' off' : '';
+                            ?>">
+                            <?php
+                            drawRectangle(400, 100);
+                            ?>
+                        </div>
+                        <!-- END : first vertical line = vertical line right-top  -->
+
+                        <!-- START : second vertical line = vertical line right-bottom  -->
+                        <div class="digit-units vertical right-bottom 
+                            <?=
+                            ($second == 2) ? ' off' : '';
+                            ?>">
+                            <?php
+                            drawRectangle(400, 100);
+                            ?>
+                        </div>
+                        <!-- END : second vertical line = vertical line right-bottom  -->
+
+                    </div>
+                    <!-- END : mid row container : last container vertical right -->
+
+                </div>
+                <!-- END : mid row container  -->
+
+                <!-- START : last horizontal line = horizontal line bottom  -->
+                <div class="digit-units horizontal bottom 
+                    <?=
+                    (($second == 1) || ($second == 4) || ($second == 7)) ? ' off' : '';
+                    ?>">
+                    <?php
+                    drawRectangle(100, 500);
+                    ?>
+                </div>
+                <!-- END : last horizontal line = horizontal line bottom  -->
+
+            </div>
+            <!-- END : digit right : units  -->
 
         </div>
-        <!-- END : digit left : tens  -->
-
-
-        <!-- START : digit right : units  -->
-        <div class="digit-units d-flex flex-wrap">
-            <!-- START : first horizontal line = horizontal line top  -->
-            <div class="digit-units horizontal top 
-            <?=
-            (($second == 1) || ($second == 4)) ? ' off' : '';
-            ?>">
-                <?php
-                drawRectangle(100, 500);
-                ?>
-            </div>
-            <!-- END : first horizontal line = horizontal line top  -->
-
-            <!-- START : mid row container  -->
-            <div class="digit-units mid-row d-flex flex-row flex-wrap">
-
-                <!-- START : mid row container : first container vertical left -->
-                <div class="digit-units mid-row vertical-left d-flex flex-column">
-
-                    <!-- START : first vertical line = vertical line left-top  -->
-                    <div class="digit-units vertical left-top 
-                        <?=
-                        (($second == 1) || ($second == 2) || ($second == 3) || ($second == 7)) ? ' off' : '';
-                        ?>">
-                        <?php
-                        drawRectangle(400, 100);
-                        ?>
-                    </div>
-                    <!-- END : first vertical line = vertical line left-top  -->
-
-                    <!-- START : second vertical line = vertical line left-bottom  -->
-                    <div class="digit-units vertical left-bottom 
-                        <?=
-                        (($second == 1) || ($second == 3) || ($second == 4) || ($second == 5) || ($second == 7) || ($second == 9)) ? ' off' : '';
-                        ?>">
-                        <?php
-                        drawRectangle(400, 100);
-                        ?>
-                    </div>
-                    <!-- END : second vertical line = vertical line left-bottom  -->
-
-                </div>
-                <!-- END : mid row container : first container vertical left -->
-
-                <!-- START : mid row container : second container vertical mid -->
-                <div class="digit-units mid-row middle d-flex flex-column flex-wrap">
-
-                    <!-- START : mid row container : second container vertical mid : always blank top square -->
-                    <div class="digit-units horizontal mid top-square off">
-                        <?php
-                        drawRectangle(350, 300);
-                        ?>
-                    </div>
-                    <!-- END : mid row container : second container vertical mid : always blank top square -->
-
-                    <!-- START : second horizontal line = horizontal line mid  -->
-                    <div class="digit-units horizontal mid 
-                        <?=
-                        (($second == 0) || ($second == 1) || ($second == 7)) ? ' off' : '';
-                        ?>">
-                        <?php
-                        drawRectangle(100, 300);
-                        ?>
-                    </div>
-                    <!-- END : second horizontal line = horizontal line mid  -->
-
-                    <!-- START : mid row container : second container vertical mid : always blank bottom square -->
-                    <div class="digit-units horizontal mid bottom-square off">
-                        <?php
-                        drawRectangle(350, 300);
-                        ?>
-                    </div>
-                    <!-- END : mid row container : second container vertical mid : always blank top square -->
-
-                </div>
-                <!-- END : mid row container : second container vertical mid -->
-
-                <!-- START : mid row container : last container vertical right -->
-                <div class="digit-units mid-row vertical-right d-flex flex-column">
-
-                    <!-- START : first vertical line = vertical line right-top  -->
-                    <div class="digit-units vertical right-top 
-                        <?=
-                        (($second == 5) || ($second == 6)) ? ' off' : '';
-                        ?>">
-                        <?php
-                        drawRectangle(400, 100);
-                        ?>
-                    </div>
-                    <!-- END : first vertical line = vertical line right-top  -->
-
-                    <!-- START : second vertical line = vertical line right-bottom  -->
-                    <div class="digit-units vertical right-bottom 
-                        <?=
-                        ($second == 2) ? ' off' : '';
-                        ?>">
-                        <?php
-                        drawRectangle(400, 100);
-                        ?>
-                    </div>
-                    <!-- END : second vertical line = vertical line right-bottom  -->
-
-                </div>
-                <!-- END : mid row container : last container vertical right -->
-
-            </div>
-            <!-- END : mid row container  -->
-
-            <!-- START : last horizontal line = horizontal line bottom  -->
-            <div class="digit-units horizontal bottom 
-                <?=
-                (($second == 1) || ($second == 4) || ($second == 7)) ? ' off' : '';
-                ?>">
-                <?php
-                drawRectangle(100, 500);
-                ?>
-            </div>
-            <!-- END : last horizontal line = horizontal line bottom  -->
-
-
-        </div>
-        <!-- END : digit right : units  -->
-
+        <!-- END : number  -->
 
     </div>
 
